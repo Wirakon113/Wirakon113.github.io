@@ -1,14 +1,201 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Github</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume - วีรกร สาพรเจริญ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: "Prompt", sans-serif;
+      margin: 0;
+      background-color: #f4f7fb;
+      color: #2c3e50;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1b3b6f 0%, #2874ba 100%);
+      color: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(255,255,255,0.4);
+      object-fit: cover;
+    }
+
+    header h1 {
+      margin: 15px 0 5px;
+      font-size: 30px;
+    }
+
+    header p {
+      margin: 0;
+      color: #cde4ff;
+      font-size: 16px;
+    }
+
+    nav {
+      background-color: #ffffff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      text-align: center;
+      padding: 10px 0;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #1b3b6f;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #2874ba;
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 0 20px;
+    }
+
+    section h2 {
+      color: #1b3b6f;
+      border-left: 5px solid #2874ba;
+      padding-left: 10px;
+      margin-bottom: 15px;
+      font-size: 24px;
+    }
+
+    section p, section li {
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .contact, .skills, .hobbies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact div, .skills div, .hobbies div {
+      background-color: #ffffff;
+      flex: 1 1 calc(50% - 20px);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: calc(50% - 20px);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: #1b3b6f;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .contact div, .skills div, .hobbies div, .gallery img {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <h1>My name is Wirakon Saphoncharoen</h1>
-    <h2>First page from Github</h2>
-    <br>
-    <a href="https://www.youtube.com/">youtube</a>
+
+  <header>
+    <img src="me.jpeg" alt="รูปโปรไฟล์">
+    <h1>นายวีรกร สาพรเจริญ</h1>
+    <p>@wirakon2004 | นักศึกษามหาวิทยาลัยราชภัฏอุดรธานี</p>
+  </header>
+
+  <nav>
+    <a href="#about">เกี่ยวกับฉัน</a>
+    <a href="#contact">การติดต่อ</a>
+    <a href="#skills">ทักษะ</a>
+    <a href="#activities">กิจกรรม</a>
+    <a href="#certs">Certificates</a>
+  </nav>
+
+  <section id="about">
+    <h2>เกี่ยวกับฉัน</h2>
+    <p>
+      ผมชื่อ นายวีรกร สาพรเจริญ (ชื่อเล่น: เอ็ม) ปัจจุบันอาศัยอยู่ที่จังหวัดอุดรธานี
+      จบจากโรงเรียนบ้านดุงวิทยา และกำลังศึกษาต่อที่มหาวิทยาลัยราชภัฏอุดรธานี
+    </p>
+    <p>
+      เป็นคนที่มีความรับผิดชอบ ใฝ่เรียนรู้ และพร้อมพัฒนาตนเองอยู่เสมอ
+      เวลาว่างชอบเล่นเกม ฟังเพลง เล่นกีต้าร์ และศึกษาความรู้ใหม่ๆ ผ่านสื่อออนไลน์
+      สิ่งเหล่านี้ช่วยให้ผมมีความคิดสร้างสรรค์และสามารถปรับตัวกับเทคโนโลยีสมัยใหม่ได้เป็นอย่างดี
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>การติดต่อ</h2>
+    <div class="contact">
+      <div>📞 โทร: 064-479-6746</div>
+      <div>💬 Line: 0644796746</div>
+      <div>📘 Facebook: วีรกร สาพรเจริญ</div>
+      <div>📸 Instagram: wirakon2004</div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>ทักษะ</h2>
+    <div class="skills">
+      <div>HTML / CSS</div>
+      <div>Java / Python</div>
+      <div>C / PHP</div>
+      <div>SQL</div>
+      <div>Teamwork</div>
+    </div>
+  </section>
+
+  <section id="activities">
+    <h2>กิจกรรมที่เคยทำ</h2>
+    <ul>
+      <li>เป็นพิธีกรบรรยายหลักเศรษฐกิจพอเพียง</li>
+      <li>เข้าแข่งขัน Microsoft Office</li>
+      <li>เป็นพิธีกรสอนน้องประถมศึกษาในการใช้ AI</li>
+    </ul>
+    <div class="gallery">
+      <img src="te.jpeg" alt="กิจกรรม">
+    </div>
+  </section>
+
+  <section id="certs">
+    <h2>Certificates</h2>
+    <div class="gallery">
+      <img src="cer1.jpg" alt="Ethical Hacker">
+      <img src="cer2.jpg" alt="Cybersecurity Course">
+    </div>
+  </section>
+
+  <footer>
+    © 2025 วีรกร สาพรเจริญ | Resume Website Design
+  </footer>
+
 </body>
 </html>
