@@ -281,6 +281,47 @@
     .grid{grid-template-columns:1fr;}
     nav{display:none;}
   }
+
+  /* ---------- lightbox ---------- */
+  .work .shots img,
+  .gallery img{
+    cursor:zoom-in;
+    transition:opacity .15s ease;
+  }
+  .work .shots img:hover,
+  .gallery img:hover{
+    opacity:.85;
+  }
+  .lightbox{
+    position:fixed; inset:0; z-index:100;
+    display:none;
+    align-items:center; justify-content:center;
+    background:rgba(10,10,12,0.9);
+    padding:32px;
+  }
+  .lightbox.open{display:flex;}
+  .lightbox img{
+    max-width:min(92vw,900px);
+    max-height:88vh;
+    width:auto;
+    display:block;
+    border-radius:8px;
+    box-shadow:0 10px 40px rgba(0,0,0,0.4);
+  }
+  .lightbox-close{
+    position:absolute;
+    top:20px; right:24px;
+    width:38px;height:38px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,0.25);
+    background:rgba(255,255,255,0.08);
+    color:#fff;
+    display:flex;align-items:center;justify-content:center;
+    cursor:pointer;
+    font-size:18px;
+    line-height:1;
+  }
+  .lightbox-close:hover{background:rgba(255,255,255,0.18);}
 </style>
 </head>
 <body data-lang="th">
@@ -470,6 +511,11 @@
     <p data-i18n="goal.p">ผมต้องการเป็นบุคลากรด้านเทคโนโลยีที่ไม่หยุดพัฒนา พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อยู่เสมอ เช่น AI, Cloud และ Cybersecurity เพื่อเพิ่มคุณค่าให้กับตัวเองและต่อยอดสู่การเป็นผู้เชี่ยวชาญด้าน IT ในอนาคต</p>
   </section>
 
+  <div class="lightbox" id="lightbox">
+    <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
   <footer data-i18n="footer">© 2025 วีรกร สาพรเจริญ · ออกแบบเว็บไซต์เรซูเม่</footer>
 
 <script>
@@ -548,6 +594,32 @@ setTheme(prefersDark ? 'dark' : 'light');
 themeBtn.addEventListener('click', () => {
   const next = rootEl.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
   setTheme(next);
+});
+
+/* ---------- lightbox ---------- */
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt){
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+}
+function closeLightbox(){
+  lightbox.classList.remove('open');
+  lightboxImg.src = '';
+}
+
+document.querySelectorAll('.work .shots img, .gallery img').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img.src, img.alt));
+});
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if(e.target === lightbox) closeLightbox();
+});
+document.addEventListener('keydown', (e) => {
+  if(e.key === 'Escape') closeLightbox();
 });
 </script>
 </body>
